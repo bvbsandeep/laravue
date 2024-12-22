@@ -1,0 +1,30 @@
+<!--Task.vue-->
+<template>
+    <div class="mx-auto w-4/12 mt-10 bg-blue-200 p-4 rounded-lg">
+        <div class="bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-2 flex flex-col">
+            <h1 class="text-gray-600 py-5 font-bold text-3xl"> Menu </h1>
+            <router-link
+                    class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker"
+                    to="task">
+                    Create Task
+            </router-link>
+            <router-link
+                    class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker"
+                    to="tasklist">
+                    Task List
+            </router-link>
+        </div>
+    </div>
+</template>
+
+
+<script>
+import { reactive, ref } from "vue";
+import {request} from '../helper'
+import useRouter from 'vue-router';
+export default {
+    name: "Home.vue",
+    setup() {
+    }
+}
+</script>
