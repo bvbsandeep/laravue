@@ -59,7 +59,10 @@
                     </header>
 
                     <main class="mt-6">
-                        <div id="app"></div>
+                        <div id="app">
+                            <App />
+                        </div>
+                        <script src="https://cdn.tailwindcss.com"></script>
                         @vite('resources/js/app.js')
                     </main>
 

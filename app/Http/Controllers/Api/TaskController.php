@@ -15,11 +15,12 @@ class TaskController extends Controller
         $response = [];
         $status = Response::HTTP_OK;
         try {
-            $response = Task::create([
+            $response["data"] = Task::create([
                 'title' => $request->post('title'),
                 'priority' => $request->post('priority'),
                 'due_date' => $request->post('due_date')
             ]);
+            $response["message"] = "Task created";
         } catch (\Exception $ex) {
             $status = Response::HTTP_UNPROCESSABLE_ENTITY;
             $response['message'] = $ex->getMessage();

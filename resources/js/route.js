@@ -10,6 +10,10 @@ const router = createRouter({
         {
             path: '/task',
             component: () => import('./pages/Task.vue')
+        },
+        {
+            path: '/tasklist',
+            component: () => import('./pages/TaskList.vue')
         }
     ]
 

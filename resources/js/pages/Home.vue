@@ -21,7 +21,6 @@
 <script>
 import { reactive, ref } from "vue";
 import {request} from '../helper'
-import useRouter from 'vue-router';
 export default {
     name: "Home.vue",
     setup() {
