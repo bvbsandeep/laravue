@@ -28,7 +28,7 @@ class TaskRequest extends ApiRequest
         return [
             'title' => 'required|string|min:3|max:255',
             'priority' => ['required', 'string', Rule::in(['low', 'medium', 'high'])],
-            'due_date' => 'required|string'
+            'due_date' => 'required|date|after_or_equal:today'
         ];
     }
 }

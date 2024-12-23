@@ -19,6 +19,7 @@
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
                     id="title"
                     type="text"
+                    maxlength="255"
                     v-model="form_data.title"
                     required
                 />
@@ -51,6 +52,7 @@
                     class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
                     id="due_date"
                     type="date"
+                    :min="min_date"
                     v-model="form_data.due_date"
                     required
                 />
@@ -60,7 +62,7 @@
                         type="submit" > Submit
                 </button>
                 <router-link
-                    class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker"
+                    class="inline-block align-baseline font-bold text-sm text-blue-400 hover:text-blue-900"
                     to="tasklist">
                     Task List
                 </router-link>
@@ -78,6 +80,8 @@ export default {
     name: "Task.vue",
     setup() {
         const errors = ref();
+        const min_date = ref();
+        min_date.value = new Date().toISOString().split('T')[0];
         const form_data = reactive({
             title: '',
             priority: '',
@@ -92,8 +96,11 @@ export default {
                 }
 
             } catch (exception) {
-                if(exception.response.data && exception.response.data.errors) {
-                    errors.value = Object.values(exception.response.data.errors)
+                if(exception.response && exception.response.data && exception.response.data.errors) {
+                    errors.value = Object.values(exception.response.data.errors);
+                }
+                else {
+                    errors.value = exception.message;
                 }
             }
         }
@@ -101,6 +108,7 @@ export default {
             form_data,
             errors,
             handleCreateTask,
+            min_date
         }
     }
 }

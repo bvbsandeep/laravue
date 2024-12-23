@@ -2,6 +2,9 @@ import axios from "axios";
 
 export const request = async (method, url, data) => {
     let response = null;
+    let headers = {
+        headers: {}
+    };
     switch (method) {
         case 'get':
             response = await axios.get(url, headers)
