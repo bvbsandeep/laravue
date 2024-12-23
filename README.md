@@ -1,8 +1,9 @@
 ## Set-Up instructions
 
 Open two terminal tabs
-1) navigate to resources/js folder and run npm run dev
-2) navigate to laravue/ folder and run php artisan serve
+1) In first terminal, navigate to resources/js folder and run npm run dev
+2) In second terminal, navigate to laravue/ folder and do php artisan migrate
+   and then run php artisan serve (here we get the url)
    Now, in the web browser goto the url obtained in the 2nd step (usually it would be http://localhost:8000 or similar) 
 
 ## License

@@ -91,6 +91,7 @@ export default {
             try {
                 const result = await request('post', '/api/task', form_data);
                 if (result.status === 200 && result.data) {
+                    errors.value = "";
                     alert("Task created!");
                     event.target.reset();
                 }
