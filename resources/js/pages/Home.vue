@@ -8,8 +8,9 @@
                     to="task">
                     Create Task
             </router-link>
+
             <router-link
-                    class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker"
+                    class="inline-block align-baseline py-2 font-bold text-sm text-blue hover:text-blue-darker"
                     to="tasklist">
                     Task List
             </router-link>

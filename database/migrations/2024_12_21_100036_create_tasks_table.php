@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('title', length: 255);
             $table->enum('priority', ["low", "medium", "high"]);
             $table->date('due_date');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 

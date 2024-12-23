@@ -56,16 +56,12 @@
                 />
             </div>
             <div class="flex items-center justify-between">
-                <button
-                    class="bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded"
-                    type="submit" @click="handleCreateTask"
-                >
-                    Submit
+                <button class="bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded"
+                        type="submit" > Submit
                 </button>
                 <router-link
                     class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker"
-                    to="tasklist"
-                >
+                    to="tasklist">
                     Task List
                 </router-link>
             </div>
@@ -87,15 +83,18 @@ export default {
             priority: '',
             due_date: ''
         });
-        const handleCreateTask = async () => {
+        const handleCreateTask = async (event) => {
             try {
                 const result = await request('post', '/api/task', form_data);
                 if (result.status === 200 && result.data) {
-
+                    alert("Task created!");
+                    event.target.reset();
                 }
 
             } catch (exception) {
-
+                if(exception.response.data && exception.response.data.errors) {
+                    errors.value = Object.values(exception.response.data.errors)
+                }
             }
         }
         return {
