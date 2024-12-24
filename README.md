@@ -1,5 +1,5 @@
 ## Set-Up instructions
-
+Make a copy of .env.example and rename the copied file to .env within the same folder location
 Open two terminal tabs
 1) In first terminal, navigate to resources/js folder and run npm install and later run npm run dev
 2) In second terminal, navigate to laravue/ main folder and run composer install and then do php artisan migrate
