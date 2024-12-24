@@ -1,5 +1,6 @@
 ## Set-Up instructions
 Make a copy of .env.example and rename the copied file to .env within the same folder location
+In the .env file, please make sure the value of APP_URL=http://127.0.0.1:8000 is updated as per the second step below.
 
 Open two terminal tabs
 1) In first terminal, navigate to resources/js folder and run npm install and later run npm run dev
